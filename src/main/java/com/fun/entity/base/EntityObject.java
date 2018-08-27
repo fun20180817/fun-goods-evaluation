@@ -7,6 +7,7 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.MappedSuperclass;
+import javax.persistence.Version;
 
 import org.springframework.data.annotation.CreatedDate;
 import org.springframework.data.annotation.LastModifiedDate;
@@ -44,6 +45,7 @@ public class EntityObject implements Serializable {
 	/**
 	 * 乐观锁
 	 */
+	@Version
 	@Column(name = "`VERSION`", columnDefinition = "int(11) DEFAULT 0")
 	private int version;
 
